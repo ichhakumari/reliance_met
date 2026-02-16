@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!slider || !prev || !next) return;
 
-        const scrollAmount = 500;
+        const scrollAmount = window.innerWidth < 768 ? 300 : 500;
         next.addEventListener('click', () => {
             slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
         });
