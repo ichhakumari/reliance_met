@@ -233,26 +233,12 @@ img {
 }
 
 .logo img {
-    height: 40px;
+    height: 60px;
     transition: var(--transition-standard);
 }
 
 #navbar.scrolled .logo img {
-    height: 35px;
-}
-
-.brand-name {
-    color: var(--elegant-white);
-    font-size: 1.2rem;
-    font-weight: 800;
-    letter-spacing: 1px;
-    font-family: var(--font-body);
-    text-transform: uppercase;
-    transition: var(--transition-standard);
-}
-
-#navbar.scrolled .brand-name {
-    color: var(--primary-black);
+    height: 50px;
 }
 
 .nav-links {
@@ -352,7 +338,7 @@ img {
     overflow: hidden;
     display: flex;
     align-items: center;
-    padding-top: 90px;
+    padding-top: 100px;
 }
 
 .hero-bg-parallax {
