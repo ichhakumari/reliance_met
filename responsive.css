@@ -1,16 +1,46 @@
 /* --- COMPREHENSIVE RESPONSIVENESS (OVERRIDE) --- */
 
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+#back-to-top {
+    border-radius: 50% !important;
+    bottom: 30px !important;
+    right: 20px !important;
+    width: 50px !important;
+    height: 50px !important;
+    display: none !important;
+    /* Will be shown by JS */
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4) !important;
+    background: var(--royal-gold) !important;
+    color: var(--primary-black) !important;
+    z-index: 9999;
+}
+
+:root {
+    --section-padding: 40px 15px;
+}
+
 @media (max-width: 1200px) {
     .container {
-        padding: 0 40px;
+        padding: 0 30px;
     }
 
     .hero-content h1 {
-        font-size: 4rem;
+        font-size: 3.5rem;
     }
 
     .about-main-title {
-        font-size: 3.5rem;
+        font-size: 3rem;
+    }
+
+    .pricing-slider {
+        padding: 20px 20px 40px;
     }
 }
 
@@ -20,11 +50,11 @@
     }
 
     #navbar .container {
-        padding: 15px 20px;
+        padding: 12px 20px;
         width: 100%;
         border-radius: 0;
         background: transparent;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     }
 
     #navbar.scrolled .container {
@@ -43,10 +73,11 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 25px;
+        gap: 30px;
         z-index: 1000;
         opacity: 0;
         transition: var(--transition-standard);
+        padding: 60px 40px;
     }
 
     .nav-links.active {
@@ -56,8 +87,11 @@
 
     .nav-links a {
         color: var(--text-main) !important;
-        font-size: 1.4rem;
+        font-size: 1.5rem;
         font-weight: 700;
+        text-transform: uppercase;
+        width: 100%;
+        text-align: center;
     }
 
     .nav-actions {
@@ -69,163 +103,247 @@
     }
 
     .hero-section {
-        height: auto;
-        padding: 120px 0 60px;
-        min-height: 100vh;
+        padding: 100px 0 40px;
+        min-height: auto;
     }
 
     .hero-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 30px;
         text-align: center;
     }
 
-    .hero-content p {
-        margin: 0 auto 30px;
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .hero-content h1 {
-        font-size: 3.5rem;
+    .hero-content p {
+        margin: 0 auto 25px;
     }
 
     .about-top-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .about-content {
-        text-align: center;
-    }
-
-    .about-overview-text {
-        max-width: 100%;
+        gap: 30px;
+        margin-bottom: 30px;
     }
 
     .about-image-wrapper {
-        height: 400px;
+        height: 350px;
+        order: -1;
+        /* Image first on mobile */
     }
 
     .new-stats-row {
-        grid-template-columns: 1fr 1fr;
-        gap: 30px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 30px 20px;
     }
 
-    .pricing-slider {
-        padding-bottom: 30px;
+    .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .service-card {
+        height: 380px;
     }
 
     .why-choose-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 30px;
     }
 
     .why-choose-right {
-        height: 400px;
-    }
-
-    .contact-card-modern {
-        grid-template-columns: 1fr;
+        height: 350px;
     }
 
     .footer-grid {
         grid-template-columns: 1fr 1fr;
-        gap: 40px;
-    }
-
-    .faq-split-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .faq-right-column {
-        display: none;
+        gap: 30px;
     }
 }
 
 @media (max-width: 768px) {
     .section-heading h2 {
-        font-size: 2.2rem;
+        font-size: 2rem;
+    }
+
+    .section-heading {
+        margin-bottom: 25px !important;
     }
 
     .about-main-title {
-        font-size: 2.8rem;
-    }
-
-    .impact-text {
-        font-size: 1.8rem;
-    }
-
-    .price-glass-card {
-        min-width: 280px;
-    }
-
-    .amenity-card {
-        width: 150px;
-    }
-
-    .amenity-icon-wrapper {
-        width: 70px;
-        height: 70px;
-        font-size: 1.5rem;
-    }
-
-    .testimonial-card {
-        min-width: 100%;
-        padding: 30px;
-    }
-
-    .faq-title-main {
         font-size: 2.5rem;
     }
 
-    .faq-header-modern span {
+    .impact-text {
+        font-size: 1.5rem;
+        line-height: 1.4;
+    }
+
+    .price-glass-card {
+        min-width: 270px;
+        flex: 0 0 270px;
+        padding: 25px 20px;
+    }
+
+    .price-amount {
+        font-size: 1.8rem;
+    }
+
+    .amenity-card {
+        width: 130px;
+        height: auto;
+    }
+
+    .amenity-icon-wrapper {
+        width: 60px;
+        height: 60px;
+        font-size: 1.2rem;
+    }
+
+    /* Testimonials Mobile Fix */
+    .avatar-floating-container {
+        height: 20px !important;
+        margin-bottom: 20px;
+    }
+
+    .testimonial-central-card {
+        padding: 60px 20px 30px;
+        margin: 0 5px;
+        border-radius: 25px;
+    }
+
+    .testimonial-quote-text {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .testimonial-nav {
+        width: 40px;
+        height: 40px;
+    }
+
+    .testimonial-nav.prev {
+        left: -10px;
+    }
+
+    .testimonial-nav.next {
+        right: -10px;
+    }
+
+    .faq-title-main {
+        font-size: 2.2rem;
+    }
+
+    .faq-title-italic {
+        font-size: 2.5rem;
+        margin-top: -5px;
+    }
+
+    /* Video Slider Mobile Fix */
+    .slider-container {
+        padding: 0 45px;
+        margin-top: 10px;
+    }
+
+    .slider-btn {
+        width: 40px;
+        height: 40px;
         font-size: 1rem;
     }
 
-    .footer-brand p {
-        font-size: 0.9rem;
+    .slider-btn.prev {
+        left: 5px;
     }
 
-    .video-item iframe {
-        height: 250px;
+    .slider-btn.next {
+        right: 5px;
+    }
+
+    /* Contact Card Mobile Fix */
+    .contact-card-modern {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        margin: 0 -5px;
+        border-radius: 30px;
+    }
+
+    .contact-left-visual {
+        border-right: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        padding: 20px;
+    }
+
+    .map-wrapper-modern {
+        height: 300px;
+        border-radius: 20px;
+    }
+
+    .office-info-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .contact-right-form {
+        padding: 40px 20px;
+        border-left: none;
+        border-radius: 0 0 30px 30px;
+    }
+
+    .modern-form-ui {
+        gap: 20px;
+    }
+
+    .form-group-modern label {
+        font-size: 1.1rem;
+    }
+
+    .form-group-modern input,
+    .form-group-modern textarea {
+        padding: 15px 25px;
+        border-radius: 30px;
     }
 }
 
 @media (max-width: 576px) {
+    .container {
+        padding: 0 20px;
+    }
+
     .hero-content h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero-content p {
-        font-size: 1.1rem;
-    }
-
-    .luxury-form {
-        padding: 30px 20px;
-    }
-
-    .about-main-title {
         font-size: 2.2rem;
     }
 
-    .impact-text {
-        font-size: 1.5rem;
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .luxury-form {
+        padding: 25px 15px;
+        margin: 0 -10px;
+    }
+
+    .luxury-form h3 {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
     }
 
     .new-stats-row {
         grid-template-columns: 1fr;
+        padding: 25px 15px;
     }
 
-    .price-amount {
-        font-size: 2rem;
+    .stat-number {
+        font-size: 2.5rem;
     }
 
-    .btn-modern-send {
-        padding: 15px;
-    }
-
-    .contact-left-visual,
-    .contact-right-form {
-        padding: 40px 20px;
+    .why-choose-right {
+        height: 280px;
     }
 
     .footer-grid {
@@ -233,17 +351,41 @@
         text-align: center;
     }
 
-    .logo-footer {
-        justify-content: center;
-    }
-
+    .logo-footer,
     .social-links {
         justify-content: center;
     }
 
     .rotating-badge {
-        transform: scale(0.8);
-        left: -20px;
-        bottom: -20px;
+        width: 100px;
+        height: 100px;
+        left: -10px;
+        bottom: -10px;
+    }
+
+    .badge-text-circle span {
+        font-size: 0.6rem;
+        transform-origin: 0 50px;
+    }
+
+    .badge-center-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    .pricing-slider {
+        gap: 15px;
+        padding: 10px 10px 30px;
+    }
+
+    .price-glass-card {
+        min-width: 250px;
+        flex: 0 0 250px;
+    }
+
+    .pricing-bg-text {
+        font-size: 15vw;
+        top: 25%;
     }
 }
