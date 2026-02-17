@@ -34,7 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
         progressIndicator.style.width = scrolled + "%";
     });
 
-    // 4. Parallax Effect for Hero
+    // 4. Parallax Effect for Hero - Handled via CSS background-attachment: fixed
+    /*
     window.addEventListener('scroll', () => {
         const scrolled = window.scrollY;
         const parallax = document.querySelector('.hero-bg-parallax');
@@ -42,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             parallax.style.transform = `translateY(${scrolled * 0.4}px)`;
         }
     });
+    */
 
     // 5. Mobile Menu Toggle
     const mobileMenu = document.getElementById('mobile-menu');
@@ -149,17 +151,79 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 12. Interactive Testimonials
+    const floatingAvatars = document.querySelectorAll('.floating-avatar');
+    const mainAvatar = document.getElementById('main-testimonial-avatar');
+    const mainName = document.getElementById('main-testimonial-name');
+    const mainEmail = document.getElementById('main-testimonial-email');
+    const mainQuote = document.getElementById('main-testimonial-quote');
+    const centralCard = document.querySelector('.testimonial-central-card');
+    const prevBtn = document.getElementById('testimonial-prev');
+    const nextBtn = document.getElementById('testimonial-next');
+
+    let currentIndex = 0;
+
+    const updateTestimonial = (index) => {
+        const avatar = floatingAvatars[index];
+        // Remove active class from all
+        floatingAvatars.forEach(a => a.classList.remove('active'));
+        // Add to targeted
+        avatar.classList.add('active');
+
+        // Get data
+        const name = avatar.getAttribute('data-name');
+        const email = avatar.getAttribute('data-email');
+        const quote = avatar.getAttribute('data-quote');
+        const imgSrc = avatar.querySelector('img').src;
+
+        // Simple fade effect
+        centralCard.style.opacity = '0';
+        centralCard.style.transform = 'translateY(20px)';
+
+        setTimeout(() => {
+            mainName.innerText = name;
+            mainEmail.innerText = email;
+            mainQuote.innerText = `"${quote}"`;
+            mainAvatar.src = imgSrc;
+
+            centralCard.style.opacity = '1';
+            centralCard.style.transform = 'translateY(0)';
+        }, 300);
+    };
+
+    if (floatingAvatars.length > 0 && mainAvatar) {
+        floatingAvatars.forEach((avatar, index) => {
+            avatar.addEventListener('click', () => {
+                currentIndex = index;
+                updateTestimonial(currentIndex);
+            });
+        });
+
+        if (prevBtn && nextBtn) {
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + floatingAvatars.length) % floatingAvatars.length;
+                updateTestimonial(currentIndex);
+            });
+
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % floatingAvatars.length;
+                updateTestimonial(currentIndex);
+            });
+        }
+    }
     // 11. Back to Top Button
     const backToTop = document.getElementById('back-to-top');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 500) {
-            backToTop.style.display = 'block';
-        } else {
-            backToTop.style.display = 'none';
-        }
-    });
+    if (backToTop) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
 
-    backToTop.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
 });

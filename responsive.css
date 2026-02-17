@@ -28,8 +28,7 @@
     }
 
     #navbar.scrolled .container {
-        width: calc(100% - 30px);
-        border-radius: 100px;
+        padding: 10px 20px;
         background: var(--bg-white);
     }
 

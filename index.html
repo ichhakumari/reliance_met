@@ -54,7 +54,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
-<body>
+<body class="home-page">
 
     <!-- Scroll Progress -->
     <div id="scroll-progress"></div>
@@ -63,20 +63,22 @@
     <header id="navbar">
         <nav class="container">
             <div class="logo">
-                <img src="logo.webp" alt="Reliance MET City Logo" class="lazy">
+                <img src="public/logo.webp" alt="Reliance MET City Logo" class="lazy">
             </div>
 
             <ul class="nav-links">
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#who-we-are">About</a></li>
+                <li><a href="#services">Services</a></li>
                 <li><a href="#property-listing">Gallery</a></li>
                 <li><a href="#pricing">Price</a></li>
+                <li><a href="#">Blog</a></li>
                 <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
 
             <div class="nav-actions">
-                <a href="#contact" class="nav-cta">Inquiry</a>
+                <a href="contact.html" class="nav-cta">Inquiry</a>
             </div>
 
             <div class="mobile-toggle" id="mobile-menu">
@@ -132,7 +134,7 @@
                 <!-- Top Grid: Overview & Image -->
                 <div class="about-top-grid">
                     <div class="about-content reveal">
-                        <div class="about-breadcrumb">[Home / <span>About</span>]</div>
+                        <div class="about-breadcrumb">[<span>About</span>]</div>
                         <h1 class="about-main-title">Reliance <span class="gold-text">Met City</span> <br>Overview</h1>
                         <p class="about-overview-text">
                             Reliance Met City is a modern economic township developed by Reliance Industries Limited in
@@ -147,7 +149,7 @@
                         </p>
                     </div>
                     <div class="about-image-wrapper reveal">
-                        <img src="e_image_1.jpg" alt="Reliance Met City Overview" class="about-main-img">
+                        <img src="public/e_image_1.jpg" alt="Reliance Met City Overview" class="about-main-img">
                         <div class="rotating-badge">
                             <div class="badge-text-circle" id="rotatingBadgeText">
                                 <!-- Text will be injected by JS -->
@@ -202,6 +204,70 @@
             }
         </script>
 
+        <!-- Services Section -->
+        <section id="services" class="services-section">
+            <div class="container">
+                <div class="section-heading text-center" style="margin-bottom: 20px;">
+                    <span class="luxury-badge">Our Expertise</span>
+                    <h2>Premier <span class="gold-text">Services</span> & Solutions</h2>
+                    <div class="gold-underline"></div>
+                </div>
+
+                <div class="services-grid">
+                    <!-- Residential Plots -->
+                    <div class="service-card reveal" style="background-image: url('public/e_image_4.jpg');">
+                        <div class="service-overlay"></div>
+                        <div class="service-content">
+                            <div class="service-icon"><i class="fas fa-home"></i></div>
+                            <h3>Residential Plots</h3>
+                            <p>Build your dream home in a high-growth township with world-class amenities and lush green
+                                surroundings.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Gated Community</li>
+                                <li><i class="fas fa-check"></i> 24/7 Security</li>
+                                <li><i class="fas fa-check"></i> Premium Lifestyle</li>
+                            </ul>
+                            <a href="#contact" class="btn-service">Book Now <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Industrial Plots -->
+                    <div class="service-card reveal" style="background-image: url('public/Industrial_Plots.png');">
+                        <div class="service-overlay"></div>
+                        <div class="service-content">
+                            <div class="service-icon"><i class="fas fa-industry"></i></div>
+                            <h3>Industrial Plots</h3>
+                            <p>Strategic industrial locations with excellent connectivity, gas pipelines, and robust
+                                power infrastructure.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> KMP Expressway Connectivity</li>
+                                <li><i class="fas fa-check"></i> Robust Power Supply</li>
+                                <li><i class="fas fa-check"></i> Business Growth</li>
+                            </ul>
+                            <a href="#contact" class="btn-service">Inquiry <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Commercial Plots -->
+                    <div class="service-card reveal" style="background-image: url('public/commercial.png');">
+                        <div class="service-overlay"></div>
+                        <div class="service-content">
+                            <div class="service-icon"><i class="fas fa-building"></i></div>
+                            <h3>Commercial Plots</h3>
+                            <p>Investment-ready commercial spaces designed for retail hubs, office complexes, and
+                                business centers.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> High Visibility</li>
+                                <li><i class="fas fa-check"></i> Massive Footfall</li>
+                                <li><i class="fas fa-check"></i> Commercial Growth</li>
+                            </ul>
+                            <a href="#contact" class="btn-service">Explore <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Reliance Met City Images Scroller -->
         <section id="property-listing" class="property-scroller-section bg-light" style="overflow: hidden;">
             <div class="section-heading text-center" style="margin-bottom: 40px;">
@@ -212,17 +278,17 @@
 
             <div class="infinite-scroller">
                 <div class="scroller-inner">
-                    <div class="scroller-item"><img src="e_image_1.jpg" alt="Property 1"></div>
-                    <div class="scroller-item"><img src="e_image_2.jpg" alt="Property 2"></div>
-                    <div class="scroller-item"><img src="e_image_3.jpg" alt="Property 3"></div>
-                    <div class="scroller-item"><img src="e_image_4.jpg" alt="Property 4"></div>
-                    <div class="scroller-item"><img src="e_image_5.jpg" alt="Property 5"></div>
+                    <div class="scroller-item"><img src="public/e_image_1.jpg" alt="Property 1"></div>
+                    <div class="scroller-item"><img src="public/e_image_2.jpg" alt="Property 2"></div>
+                    <div class="scroller-item"><img src="public/e_image_3.jpg" alt="Property 3"></div>
+                    <div class="scroller-item"><img src="public/e_image_4.jpg" alt="Property 4"></div>
+                    <div class="scroller-item"><img src="public/e_image_5.jpg" alt="Property 5"></div>
                     <!-- Duplicate for seamless loop -->
-                    <div class="scroller-item"><img src="e_image_1.jpg" alt="Property 1"></div>
-                    <div class="scroller-item"><img src="e_image_2.jpg" alt="Property 2"></div>
-                    <div class="scroller-item"><img src="e_image_3.jpg" alt="Property 3"></div>
-                    <div class="scroller-item"><img src="e_image_4.jpg" alt="Property 4"></div>
-                    <div class="scroller-item"><img src="e_image_5.jpg" alt="Property 5"></div>
+                    <div class="scroller-item"><img src="public/e_image_1.jpg" alt="Property 1"></div>
+                    <div class="scroller-item"><img src="public/e_image_2.jpg" alt="Property 2"></div>
+                    <div class="scroller-item"><img src="public/e_image_3.jpg" alt="Property 3"></div>
+                    <div class="scroller-item"><img src="public/e_image_4.jpg" alt="Property 4"></div>
+                    <div class="scroller-item"><img src="public/e_image_5.jpg" alt="Property 5"></div>
                 </div>
             </div>
         </section>
@@ -373,7 +439,7 @@
         <!-- Why Choose Us Section -->
         <section id="why-invest" class="why-choose-section">
             <div class="container">
-                <div class="section-heading text-center" style="margin-bottom: 40px;">
+                <div class="section-heading text-center" style="margin-bottom: 20px;">
                     <span class="luxury-badge">Investment Highlights</span>
                     <h2>Why Invest in <span class="gold-text">Reliance MET City?</span></h2>
                     <div class="gold-underline"></div>
@@ -421,7 +487,7 @@
 
                     <div class="why-choose-right reveal">
                         <div class="image-frame-container">
-                            <img src="house.jpg" alt="Reliance MET City Lifestyle">
+                            <img src="public/house.jpg" alt="Reliance MET City Lifestyle">
                             <div class="floating-badge">
                                 <div class="badge-icon">✓</div>
                                 <div class="badge-text">
@@ -634,81 +700,69 @@
             </div>
         </section>
 
-        <!-- Testimonials Section - Pinned Note Slider -->
-        <section class="testimonial-section">
+        <!-- Testimonials Modern Section -->
+        <section id="testimonials" class="testimonials-modern">
             <div class="container">
-                <div class="section-heading text-center" style="margin-bottom: 20px;">
-                    <span class="luxury-badge">Client Trust</span>
-                    <h2>Word of the <span class="gold-text">Elite</span></h2>
-                    <div class="gold-underline"></div>
+                <div class="testimonials-badge-wrapper">
+                    <span class="badge-testimonial">Testimonials</span>
                 </div>
+                <h2 class="text-center">Client <span class="gold-text">Stories</span></h2>
+                <p class="testimonials-subtitle">
+                    Don't just take our word for it. Explore the experiences of our valued clients and their journey
+                    with Reliance MET City.
+                </p>
 
-                <div class="testimonial-slider-container reveal">
-                    <!-- Card 01 -->
-                    <div class="testimonial-card">
-                        <div class="card-number">01</div>
-                        <h3>Professional & Hassle-free Process</h3>
-                        <p class="quote-text">"Purchased a plot and the process was extremely professional and
-                            hassle-free. Every document was explained properly, and the staff was supportive throughout.
-                            I feel confident and happy about my investment decision."</p>
-                        <div class="client-info">
-                            <h4>Priya Mehta</h4>
-                        </div>
+                <div class="avatar-floating-container">
+                    <div class="floating-avatar avatar-1 active" data-name="Priya Mehta"
+                        data-email="priya.mehta@example.com"
+                        data-quote="Investing in Reliance MET City was the best decision for my family's future. The transparency in documentation and the world-class infrastructure layout completely exceeded my expectations. Highly recommended for serious investors!">
+                        <img src="https://i.pravatar.cc/150?u=1" alt="Client">
                     </div>
-
-                    <!-- Card 02 -->
-                    <div class="testimonial-card">
-                        <div class="card-number">02</div>
-                        <h3>Clear Pricing & Proper Guidance</h3>
-                        <p class="quote-text">"Reliance Smart City offered me great plot options with clear pricing and
-                            proper guidance. The entire buying journey was simple, and the staff addressed all my
-                            concerns patiently. I am very pleased with the overall experience."</p>
-                        <div class="client-info">
-                            <h4>Amit Verma</h4>
-                        </div>
+                    <div class="floating-avatar avatar-2" data-name="Amit Verma" data-email="amit.verma@example.com"
+                        data-quote="Reliance Smart City offered me great plot options with clear pricing and proper guidance. The entire buying journey was simple, and the staff addressed all my concerns patiently. I am very pleased with the overall experience.">
+                        <img src="https://i.pravatar.cc/150?u=2" alt="Client">
                     </div>
-
-                    <!-- Card 03 -->
-                    <div class="testimonial-card">
-                        <div class="card-number">03</div>
-                        <h3>Excellent Transparency & Support</h3>
-                        <p class="quote-text">"My experience buying a plot at Reliance Met City was excellent. The team
-                            ensured full transparency and helped me choose the right plot. All paperwork was quick and
-                            clear, making the investment process comfortable and reassuring for me."</p>
-                        <div class="client-info">
-                            <h4>Sunita Yadav</h4>
-                        </div>
+                    <div class="floating-avatar avatar-3" data-name="Sunita Yadav" data-email="sunita.yadav@example.com"
+                        data-quote="My experience buying a plot at Reliance Met City was excellent. The team ensured full transparency and helped me choose the right plot. All paperwork was quick and clear, making the investment process comfortable.">
+                        <img src="https://i.pravatar.cc/150?u=3" alt="Client">
                     </div>
-
-                    <!-- Card 04 -->
-                    <div class="testimonial-card">
-                        <div class="card-number">04</div>
-                        <h3>Highly Satisfied with Support</h3>
-                        <p class="quote-text">"I recently bought a plot at Reliance Met Jhajjar and everything was
-                            handled professionally. From site visit to documentation, the staff supported me at each
-                            stage. I am completely satisfied with the service and confident about my investment."</p>
-                        <div class="client-info">
-                            <h4>Rohit Kumar</h4>
-                        </div>
+                    <div class="floating-avatar avatar-4" data-name="Rohit Kumar" data-email="rohit.kumar@example.com"
+                        data-quote="I recently bought a plot at Reliance Met Jhajjar and everything was handled professionally. From site visit to documentation, the staff supported me at each stage. I am completely satisfied with the service.">
+                        <img src="https://i.pravatar.cc/150?u=4" alt="Client">
                     </div>
-
-                    <!-- Card 05 -->
-                    <div class="testimonial-card">
-                        <div class="card-number">05</div>
-                        <h3>Smooth Investment Journey</h3>
-                        <p class="quote-text">"Buying a plot at Reliance Met Jhajjar was a smooth and transparent
-                            experience. The team guided me clearly at every step, and all project details were shared
-                            openly. I am fully satisfied with my purchase and future prospects here."</p>
-                        <div class="client-info">
-                            <h4>Rahul Sharma</h4>
-                        </div>
+                    <div class="floating-avatar avatar-5" data-name="Rahul Sharma" data-email="rahul.sharma@example.com"
+                        data-quote="Buying a plot at Reliance Met Jhajjar was a smooth and transparent experience. The team guided me clearly at every step, and all project details were shared openly. I am fully satisfied with my purchase and future prospects here.">
+                        <img src="https://i.pravatar.cc/150?u=5" alt="Client">
+                    </div>
+                    <div class="floating-avatar avatar-6" data-name="Vikram Singh" data-email="vikram.singh@example.com"
+                        data-quote="The professionalism showed by the MET team is unmatched. They helped me find the perfect commercial plot for my business expansion. The amenities planned are world-class and perfect for growth.">
+                        <img src="https://i.pravatar.cc/150?u=6" alt="Client">
                     </div>
                 </div>
 
-                <div class="slider-dots">
-                    <div class="dot active"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
+                <div class="testimonial-central-card reveal">
+                    <button class="testimonial-nav prev" id="testimonial-prev">❮</button>
+                    <button class="testimonial-nav next" id="testimonial-next">❯</button>
+
+                    <div class="card-avatar-main">
+                        <img id="main-testimonial-avatar" src="https://i.pravatar.cc/150?u=1" alt="Main Client">
+                    </div>
+                    <h4 id="main-testimonial-name">Priya Mehta</h4>
+                    <span id="main-testimonial-email" class="client-email">priya.mehta@example.com</span>
+                    <p id="main-testimonial-quote" class="testimonial-quote-text">
+                        "Investing in Reliance MET City was the best decision for my family's future. The transparency
+                        in documentation and the world-class infrastructure layout completely exceeded my expectations.
+                        Highly recommended for serious investors!"
+                    </p>
+
+                    <div class="gmb-button-wrapper">
+                        <a href="https://www.google.com/search?q=Reliance+MET+City+reviews" target="_blank"
+                            class="btn-gmb">
+                            <img src="https://www.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png"
+                                alt="Google Logo">
+                            Check regular updates on GMB
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -753,7 +807,6 @@
                 <div class="faq-split-layout reveal">
                     <!-- Left Column: FAQ List -->
                     <div class="faq-left-column">
-
                         <div class="faq-list-modern">
                             <!-- Q1 -->
                             <div class="faq-item-modern">
@@ -854,7 +907,7 @@
 
                     <!-- Right Column: Visual -->
                     <div class="faq-right-column">
-                        <img src="plot.png" alt="Reliance MET City Future">
+                        <img src="public/plot.png" alt="Reliance MET City Future">
                     </div>
                 </div>
             </div>
@@ -863,7 +916,7 @@
         <!-- Contact Section Modern -->
         <section id="contact" class="contact-section-modern">
             <div class="container">
-                <div class="section-heading text-center" style="margin-bottom: 40px;">
+                <div class="section-heading text-center" style="margin-bottom: 20px;">
                     <span class="luxury-badge">Inquiry</span>
                     <h2>Get in Touch with <span class="gold-text">Experts</span></h2>
                     <div class="gold-underline"></div>
@@ -895,23 +948,36 @@
                         </div>
                     </div>
                     <div class="contact-right-form">
-                        <form class="modern-form-ui">
+                        <form class="modern-form-ui" id="home-whatsapp-form">
                             <div class="form-group-modern">
                                 <label>Name</label>
-                                <input type="text" placeholder="Jude Bellingham |" required>
+                                <input type="text" id="home-name" placeholder="Jude Bellingham |" required>
                             </div>
                             <div class="form-group-modern">
                                 <label>Phone Number</label>
-                                <input type="tel" placeholder="+91 Phone Number" required>
+                                <input type="tel" id="home-phone" placeholder="+91 Phone Number" required>
                             </div>
                             <div class="form-group-modern">
                                 <label>Message</label>
-                                <textarea placeholder="Write your message here" rows="5" required></textarea>
+                                <textarea id="home-message" placeholder="Write your message here" rows="5"
+                                    required></textarea>
                             </div>
-                            <button type="submit" class="btn-modern-send">Send Message</button>
+                            <button type="submit" class="btn-modern-send full-width">Send Message</button>
                         </form>
                     </div>
                 </div>
+
+                <script>
+                    document.getElementById('home-whatsapp-form').addEventListener('submit', function (e) {
+                        e.preventDefault();
+                        const name = document.getElementById('home-name').value;
+                        const phone = document.getElementById('home-phone').value;
+                        const message = document.getElementById('home-message').value;
+                        const whatsappNumber = "917450053004";
+                        const text = `Name: ${name}%0APhone: ${phone}%0AMessage: ${message}`;
+                        window.open(`https://wa.me/${whatsappNumber}?text=${text}`, '_blank');
+                    });
+                </script>
             </div>
         </section>
     </main>
@@ -920,9 +986,9 @@
         <div class="container footer-grid reveal">
             <div class="footer-brand">
                 <div class="logo-footer">
-                    <img src="logo.webp" alt="Reliance MET City Logo"
+                    <img src="public/logo.webp" alt="Reliance MET City Logo"
                         style="height: 50px; filter: brightness(0) invert(1);">
-                    <h2 class="gold-text brand-font">MET CITY</h2>
+                    <!-- <h2 class="gold-text brand-font">MET CITY</h2> -->
                 </div>
                 <p>An elite integrated township initiative by Reliance Industries Limited, redefining luxury living and
                     industrial excellence in the NCR region.</p>
@@ -947,7 +1013,7 @@
                 <ul>
                     <li><a href="#faq">Common Questions</a></li>
                     <li><a href="#why-invest">Why Invest?</a></li>
-                    <li><a href="#contact">Estate Inquiry</a></li>
+                    <li><a href="contact.html">Estate Inquiry</a></li>
                     <li><a href="#hero">Privacy Policy</a></li>
                 </ul>
             </div>

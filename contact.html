@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Contact Us | Reliance MET City | Questions & Answers</title>
+    <meta name="description"
+        content="Get in touch with Reliance MET City experts. Have questions about our residential or industrial plots in Jhajjar? We have the answers.">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body class="contact-page">
+
+    <!-- Scroll Progress -->
+    <div id="scroll-progress"></div>
+
+    <!-- Header -->
+    <header id="navbar">
+        <nav class="container">
+            <div class="logo">
+                <a href="index.html"><img src="public/logo.webp" alt="Reliance MET City Logo" class="lazy"></a>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html#hero">Home</a></li>
+                <li><a href="index.html#who-we-are">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#property-listing">Gallery</a></li>
+                <li><a href="index.html#pricing">Price</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="contact.html" class="nav-cta">Inquiry</a>
+            </div>
+
+            <div class="mobile-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Contact Hero Section -->
+        <section class="contact-hero">
+            <div class="hero-bg-parallax" style="background-image: var(--light-overlay), url('public/banner.webp');">
+            </div>
+            <div class="container contact-hero-grid">
+                <div class="contact-hero-content reveal">
+                    <h1>You Have <span class="gold-text">Questions</span>,<br>We Have <span
+                            class="gold-text">Answers</span></h1>
+                    <p>Discover experiences you won't find anywhere else — thoughtfully designed to immerse you in the
+                        heart of the destination. Soulful stories waiting to be lived.</p>
+
+                    <div class="contact-info-grid">
+                        <div class="contact-info-item">
+                            <h4>Location</h4>
+                            <p>Sector 8, Met City, Yakubpur to Badli road, Jhajjar (Haryana), 124105</p>
+                            <p>Monday-Sunday | 08:00 - 22:00 (local time)</p>
+                        </div>
+                        <div class="contact-info-item">
+                            <h4>Social Media</h4>
+                            <div class="social-links-minimal">
+                                <a href="#">Instagram</a>
+                                <a href="#">LinkedIn</a>
+                                <a href="#">Facebook</a>
+                                <a href="#">Tiktok</a>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <h4>Email</h4>
+                            <p><a href="mailto:info@metjhajjarplots.com">info@metjhajjarplots.com</a></p>
+                        </div>
+                        <div class="contact-info-item">
+                            <h4>Contact</h4>
+                            <p><a href="tel:+917450053004">+91 7450053004</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper reveal">
+                    <form class="luxury-contact-form" id="whatsapp-form">
+                        <div class="form-group-modern">
+                            <label>Name</label>
+                            <input type="text" id="form-name" placeholder="Jude Bellingham |" required>
+                        </div>
+                        <div class="form-group-modern">
+                            <label>Phone Number</label>
+                            <input type="tel" id="form-phone" placeholder="+91 Phone Number" required>
+                        </div>
+                        <div class="form-group-modern">
+                            <label>Message</label>
+                            <textarea id="form-message" placeholder="Write your message here" rows="5"
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn-modern-send full-width">Send Message</button>
+                    </form>
+                </div>
+
+                <script>
+                    document.getElementById('whatsapp-form').addEventListener('submit', function (e) {
+                        e.preventDefault();
+
+                        const name = document.getElementById('form-name').value;
+                        const phone = document.getElementById('form-phone').value;
+                        const message = document.getElementById('form-message').value;
+
+                        const whatsappNumber = "917450053004";
+                        const text = `Name: ${name}%0APhone: ${phone}%0AMessage: ${message}`;
+
+                        window.open(`https://wa.me/${whatsappNumber}?text=${text}`, '_blank');
+                    });
+                </script>
+            </div>
+        </section>
+
+        <!-- Google Map Section -->
+        <section class="map-section-full">
+            <div class="map-container-full">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14013.916174488346!2d76.711816!3d28.585511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d79663d91cf9f%3A0x6a26dfca1308a0d2!2sReliance%20Met%20City!5e0!3m2!1sen!2sin!4v1715800000000!5m2!1sen!2sin"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black">
+        <div class="container footer-grid reveal">
+            <div class="footer-brand">
+                <div class="logo-footer">
+                    <img src="public/logo.webp" alt="Reliance MET City Logo"
+                        style="height: 50px; filter: brightness(0) invert(1);">
+                    <!-- <h2 class="gold-text brand-font">MET CITY</h2> -->
+                </div>
+                <p>An elite integrated township initiative by Reliance Industries Limited, redefining luxury living and
+                    industrial excellence in the NCR region.</p>
+                <div class="social-links">
+                    <a href="#" class="glow-hover"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="glow-hover"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="glow-hover"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="glow-hover"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4> Quick Links</h4>
+                <ul>
+                    <li><a href="index.html#hero">Home</a></li>
+                    <li><a href="index.html#who-we-are">About Us</a></li>
+                    <li><a href="index.html#property-listing">Visual Gallery</a></li>
+                    <li><a href="index.html#pricing">Plot Pricing</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="index.html#faq">Common Questions</a></li>
+                    <li><a href="index.html#why-invest">Why Invest?</a></li>
+                    <li><a href="contact.html">Estate Inquiry</a></li>
+                    <li><a href="index.html#hero">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Info</h4>
+                <p><i class="fas fa-map-marker-alt gold-text"></i> Sector 8, Met City, Yakubpur to Badli road, Jhajjar
+                    (Haryana), 124105</p>
+                <p><i class="fas fa-phone-alt gold-text"></i> <a href="tel:+917450053004">+91 7450053004</a></p>
+                <p><i class="fas fa-envelope gold-text"></i> <a
+                        href="mailto:info@metjhajjarplots.com">info@metjhajjarplots.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2025 Reliance MET City Plots. Commercial & Residential Township.</p>
+        </div>
+    </footer>
+
+    <button id="back-to-top">↑</button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
