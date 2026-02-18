@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO Meta Tags -->
-    <title>Reliance MET City | Luxury Residential & Industrial Plots in Jhajjar</title>
+    <title>Reliance MET City | Premium Residential & Industrial Plots in Jhajjar</title>
+    <link rel="icon" type="image/webp" href="assets/icon.jpg">
     <meta name="description"
         content="Invest in premium luxury living at Reliance MET City, Jhajjar. Modern integrated township by Reliance Industries offering ultra-premium residential and industrial plots.">
     <meta name="keywords"
@@ -103,19 +104,16 @@
                 </div>
 
                 <div class="hero-form-container reveal">
-                    <form class="luxury-form">
+                    <form class="luxury-form" id="hero-whatsapp-form">
                         <h3>Reserve Your Elite Site Visit</h3>
                         <div class="input-group">
-                            <input type="text" placeholder="Full Name" required>
+                            <input type="text" id="hero-name" placeholder="Full Name" required>
                         </div>
                         <div class="input-group">
-                            <input type="tel" placeholder="Phone Number" required>
+                            <input type="tel" id="hero-phone" placeholder="Phone Number" required>
                         </div>
                         <div class="input-group">
-                            <input type="email" placeholder="Email Address">
-                        </div>
-                        <div class="input-group">
-                            <select required>
+                            <select id="hero-budget" required>
                                 <option value="" disabled selected>Select Your Budget</option>
                                 <option value="30-50">₹30 Lakh - ₹50 Lakh</option>
                                 <option value="50-80">₹50 Lakh - ₹80 Lakh</option>
@@ -125,6 +123,17 @@
                         <button type="submit" class="btn-gold full-width">Claim Your Plot</button>
                     </form>
                 </div>
+                <script>
+                    document.getElementById('hero-whatsapp-form').addEventListener('submit', function (e) {
+                        e.preventDefault();
+                        const name = document.getElementById('hero-name').value;
+                        const phone = document.getElementById('hero-phone').value;
+                        const budget = document.getElementById('hero-budget').value;
+                        const whatsappNumber = "917450053004";
+                        const text = `Name: ${name}%0APhone: ${phone}%0ABudget: ${budget}%0AI am interested in a Site Visit at Reliance Met City.`;
+                        window.open(`https://wa.me/${whatsappNumber}?text=${text}`, '_blank');
+                    });
+                </script>
             </div>
         </section>
 
@@ -227,7 +236,7 @@
                                 <li><i class="fas fa-check"></i> 24/7 Security</li>
                                 <li><i class="fas fa-check"></i> Premium Lifestyle</li>
                             </ul>
-                            <a href="#contact" class="btn-service">Book Now <i class="fas fa-arrow-right"></i></a>
+                            <a href="#contact" class="btn-service">Inquiry <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
 
@@ -261,7 +270,7 @@
                                 <li><i class="fas fa-check"></i> Massive Footfall</li>
                                 <li><i class="fas fa-check"></i> Commercial Growth</li>
                             </ul>
-                            <a href="#contact" class="btn-service">Explore <i class="fas fa-arrow-right"></i></a>
+                            <a href="#contact" class="btn-service">Inquiry <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -321,7 +330,7 @@
                             <div class="feature-item"><span>✓</span> Prime Location</div>
                         </div>
                         <div class="price-footer">
-                            <a href="#contact" class="btn-price-apply">Apply Now</a>
+                            <a href="#contact" class="btn-price-apply">Contact Us</a>
                         </div>
                     </div>
 
@@ -925,9 +934,9 @@
                     <div class="contact-left-visual">
                         <div class="map-wrapper-modern">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14013.916174488346!2d76.711816!3d28.585511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d79663d91cf9f%3A0x6a26dfca1308a0d2!2sReliance%20Met%20City!5e0!3m2!1sen!2sin!4v1715800000000!5m2!1sen!2sin"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14013.916174488346!2d76.7881417!3d28.4964866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d6d2b2a9c98a5%3A0xbf8f1d8803840982!2sReliance%20Met%20City!5e0!3m2!1sen!2sin!4v1739984020000!5m2!1sen!2sin"
                                 width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                            <a href="https://maps.app.goo.gl/B9p9U6fXU2B8Wz9R9" target="_blank"
+                            <a href="https://maps.app.goo.gl/xooyN5MA2qjCzxxT8" target="_blank"
                                 class="map-redirect-badge">
                                 <i class="fas fa-directions"></i> Get Directions
                             </a>
@@ -994,12 +1003,6 @@
                 </div>
                 <p>An elite integrated township initiative by Reliance Industries Limited, redefining luxury living and
                     industrial excellence in the NCR region.</p>
-                <div class="social-links">
-                    <a href="#" class="glow-hover"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="glow-hover"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="glow-hover"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="glow-hover"><i class="fab fa-youtube"></i></a>
-                </div>
             </div>
             <div class="footer-links">
                 <h4>Quick Links</h4>
