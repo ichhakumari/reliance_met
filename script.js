@@ -226,4 +226,48 @@ document.addEventListener('DOMContentLoaded', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
+
+    // 13. AJAX Form Submission Logic
+    const handleFormSubmission = (form) => {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerText;
+
+            // Show loading state
+            submitBtn.innerText = "Sending...";
+            submitBtn.disabled = true;
+
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    alert("Thank you! Your inquiry has been sent to info@metjhajjarplots.com. We will contact you shortly.");
+                    form.reset();
+                } else {
+                    throw new Error('Server error');
+                }
+            } catch (error) {
+                console.error("Submission failed:", error);
+                // Fallback: If AJax fails (like on local files for some services), try traditional submit
+                form.submit();
+            } finally {
+                submitBtn.innerText = originalBtnText;
+                submitBtn.disabled = false;
+            }
+        });
+    };
+
+    // Initialize all forms
+    document.querySelectorAll('form[action*="formsubmit.co"]').forEach(form => {
+        handleFormSubmission(form);
+    });
 });
