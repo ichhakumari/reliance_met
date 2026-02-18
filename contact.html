@@ -82,38 +82,30 @@
                 </div>
 
                 <div class="contact-form-wrapper reveal">
-                    <form class="luxury-contact-form" id="whatsapp-form">
+                    <form class="luxury-contact-form" id="contact-page-form" action="https://api.web3forms.com/submit"
+                        method="POST">
+                        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                        <input type="hidden" name="to" value="info@metjhajjarplots.com">
+                        <input type="hidden" name="from_name" value="MET Jhajjar Plots - Contact Page">
+
                         <div class="form-group-modern">
                             <label>Name</label>
-                            <input type="text" id="form-name" placeholder="Jude Bellingham |" required>
+                            <input type="text" name="name" placeholder="Enter Your Name" required>
                         </div>
                         <div class="form-group-modern">
                             <label>Phone Number</label>
-                            <input type="tel" id="form-phone" placeholder="+91 Phone Number" required>
+                            <input type="tel" name="phone" placeholder="+91 Phone Number" required>
                         </div>
                         <div class="form-group-modern">
                             <label>Message</label>
-                            <textarea id="form-message" placeholder="Write your message here" rows="5"
-                                required></textarea>
+                            <textarea name="message" placeholder="Write your message here" rows="5" required></textarea>
                         </div>
                         <button type="submit" class="btn-modern-send full-width">Send Message</button>
                     </form>
+                    <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 15px; text-align: center;">
+                        * Leads will be sent to info@metjhajjarplots.com
+                    </p>
                 </div>
-
-                <script>
-                    document.getElementById('whatsapp-form').addEventListener('submit', function (e) {
-                        e.preventDefault();
-
-                        const name = document.getElementById('form-name').value;
-                        const phone = document.getElementById('form-phone').value;
-                        const message = document.getElementById('form-message').value;
-
-                        const whatsappNumber = "917450053004";
-                        const text = `Name: ${name}%0APhone: ${phone}%0AMessage: ${message}`;
-
-                        window.open(`https://wa.me/${whatsappNumber}?text=${text}`, '_blank');
-                    });
-                </script>
             </div>
         </section>
 
@@ -132,10 +124,8 @@
             <div class="footer-brand">
                 <div class="logo-footer">
                     <a href="index.html">
-                        <img src="assets/logo.webp" alt="Reliance MET City Logo"
-                            style="height: 50px; filter: brightness(0) invert(1);">
+                        <img src="assets/logo.webp" alt="Reliance MET City Logo" class="footer-logo-img">
                     </a>
-                    <!-- <h2 class="gold-text brand-font">MET CITY</h2> -->
                 </div>
                 <p>An elite integrated township initiative by Reliance Industries Limited, redefining luxury living and
                     industrial excellence in the NCR region.</p>

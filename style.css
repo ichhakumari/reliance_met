@@ -383,12 +383,19 @@ img {
 }
 
 .hero-content h1 {
-    font-size: 4.8rem;
+    font-size: 4rem;
+    /* Balanced size */
     line-height: 1.1;
     color: var(--elegant-white);
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     text-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
     font-family: var(--font-heading);
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
 }
 
 .hero-content p {
@@ -404,9 +411,23 @@ img {
     background: rgba(255, 255, 255, 0.95);
     border: 1px solid var(--royal-gold);
     padding: 40px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
     position: relative;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    animation: floatHeroForm 6s ease-in-out infinite;
+}
+
+@keyframes floatHeroForm {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 .luxury-form::before {
@@ -1820,26 +1841,27 @@ img {
 }
 
 .btn-modern-send {
-    background: #1a1a1a;
-    color: white;
+    background: var(--royal-gold);
+    color: var(--primary-black);
     padding: 18px 40px;
-    border-radius: 100px;
-    /* Fully rounded like image */
+    border-radius: 50px;
     border: none;
     font-size: 1.1rem;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-    margin-top: 20px;
+    margin-top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .btn-modern-send:hover {
-    background: #000;
+    background: #e6c04f;
     transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--gold-glow);
 }
 
 @media (max-width: 992px) {
@@ -2135,14 +2157,16 @@ footer {
     margin-bottom: 25px;
 }
 
-.logo-footer img {
-    height: 80px !important;
-    /* Overriding inline style */
+.logo-footer img,
+.footer-logo-img {
+    height: 70px !important;
+    filter: brightness(0) invert(1);
+    transition: var(--transition-standard);
 }
 
-.logo-footer h2 {
-    margin-bottom: 0;
-    font-size: 1.8rem;
+.logo-footer img:hover,
+.footer-logo-img:hover {
+    transform: scale(1.05);
 }
 
 @media (max-width: 992px) {
