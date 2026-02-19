@@ -2474,10 +2474,14 @@ footer {
         font-size: 3.5rem;
     }
 
-    .gallery-item,
-    .video-item {
+    .gallery-item {
         min-width: 300px;
         height: 350px;
+    }
+
+    .video-item {
+        min-width: 300px;
+        height: auto;
     }
 
     .price-card {
