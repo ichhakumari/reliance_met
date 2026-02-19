@@ -227,47 +227,50 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 13. AJAX Form Submission Logic
-    const handleFormSubmission = (form) => {
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const submitBtn = form.querySelector('button[type="submit"]');
-            const originalBtnText = submitBtn.innerText;
+    // 13. [WHATSAPP] Lead Form Submission Logic
+    const leadForm = document.getElementById("leadForm");
+    const whatsappNumber = "917015518275";
 
-            // Show loading state
-            submitBtn.innerText = "Sending...";
-            submitBtn.disabled = true;
+    const sendToWhatsApp = (form, e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const name = formData.get('name') || 'N/A';
+        const phone = formData.get('phone') || 'N/A';
+        const message = formData.get('message') || 'Interested in Reliance MET Plots';
+        const subject = formData.get('_subject') || 'New Inquiry';
 
-            const formData = new FormData(form);
+        const text = `*${subject}*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Message:* ${message}`;
+        const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${text}`;
 
-            try {
-                const response = await fetch(form.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
+        window.open(whatsappUrl, '_blank');
+        form.reset();
 
-                if (response.ok) {
-                    alert("Thank you! Your inquiry has been sent to info@metjhajjarplots.com. We will contact you shortly.");
-                    form.reset();
-                } else {
-                    throw new Error('Server error');
-                }
-            } catch (error) {
-                console.error("Submission failed:", error);
-                // Fallback: If AJax fails (like on local files for some services), try traditional submit
-                form.submit();
-            } finally {
-                submitBtn.innerText = originalBtnText;
-                submitBtn.disabled = false;
-            }
-        });
+        // Optionally show modal
+        const thankYouModal = document.getElementById("thankYouModal");
+        if (thankYouModal) thankYouModal.style.display = "flex";
     };
 
-    // Initialize all forms
+    if (leadForm) {
+        leadForm.addEventListener("submit", (e) => sendToWhatsApp(leadForm, e));
+    }
+
+    // Also catch any other forms that were pointed to FormSubmit
     document.querySelectorAll('form[action*="formsubmit.co"]').forEach(form => {
-        handleFormSubmission(form);
+        form.addEventListener("submit", (e) => sendToWhatsApp(form, e));
+    });
+
+    // Modal close logic
+    window.closeModal = function () {
+        const thankYouModal = document.getElementById("thankYouModal");
+        if (thankYouModal) thankYouModal.style.display = "none";
+    };
+
+    // Close modal when clicking outside
+    window.addEventListener('click', (e) => {
+        const thankYouModal = document.getElementById("thankYouModal");
+        if (e.target === thankYouModal) {
+            closeModal();
+        }
     });
 });
+

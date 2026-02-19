@@ -2734,3 +2734,53 @@ footer {
 .map-container-full iframe {
     vertical-align: bottom;
 }
+
+/* Thank You Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h2 {
+    margin-bottom: 10px;
+    color: var(--primary-black);
+    font-family: var(--font-heading);
+}
+
+.modal-content p {
+    color: var(--text-muted);
+}
+
+.modal-content button {
+    margin-top: 15px;
+    padding: 10px 25px;
+    background: var(--royal-gold);
+    border: none;
+    color: var(--primary-black);
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: var(--transition-standard);
+}
+
+.modal-content button:hover {
+    box-shadow: var(--gold-glow);
+    transform: translateY(-2px);
+}
